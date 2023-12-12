@@ -91,7 +91,7 @@ async function fetchTopArtists(token) {
 
 function populateUI(profile, artists) {
     document.getElementById("displayName").textContent = profile.display_name;
-    document.getElementById("url").textContent = profile.uri;
+    
     document.getElementById("url").setAttribute("href", profile.uri);
 //loop to show top 5 artists
     for (let i = 0; i < artists.items.length; i++) {
