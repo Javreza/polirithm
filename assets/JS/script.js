@@ -1,3 +1,8 @@
+// test JavaScript file
+// test passed file linked
+$('.title').text('polirithm')
+
+
 const clientId = "b04a7dd3004d4953af97c0266139356f"; // Replace with your client ID
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
@@ -73,25 +78,6 @@ async function fetchProfile(token) {
 
     return await result.json();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
