@@ -1,6 +1,9 @@
 const clientId = "b04a7dd3004d4953af97c0266139356f"; // client ID of app
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
+// const bypassCodeCheck = flase; // added for testing only
+//&&  !bypassCodeCheck
+
 
 if (!code) {
     redirectToAuthCodeFlow(clientId);
@@ -78,7 +81,7 @@ async function fetchProfile(token) {
 } 
 
 async function fetchTopArtists(token) {
-    const topArtists = await fetch('https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=20', {
+    const topArtists = await fetch('https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=5', {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
     });
 
@@ -87,15 +90,16 @@ async function fetchTopArtists(token) {
 
 
 function populateUI(profile, artists) {
-    document.getElementById("displayName").innerText = profile.display_name;
-    document.getElementById("id").innerText = profile.id;
-    document.getElementById("email").innerText = profile.email;
-    document.getElementById("uri").innerText = profile.uri;
-    document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
-    document.getElementById("url").innerText = profile.href;
-    document.getElementById("url").setAttribute("href", profile.href);
-
-    console.log(artists.items);
-
+    document.getElementById("displayName").textContent = profile.display_name;
+    document.getElementById("url").textContent = profile.uri;
+    document.getElementById("url").setAttribute("href", profile.uri);
+//loop to show top 5 artists
+    for (let i = 0; i < artists.items.length; i++) {
+        console.log(artists.items[i].name);
+        const listItem = document.createElement('li');
+        listItem.textContent = artists.items[i].name;
+        artistsList.appendChild(listItem);
+    }
+    
 }
 
