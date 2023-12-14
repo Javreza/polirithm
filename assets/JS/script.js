@@ -1,23 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Get the button by its class name
-    var modalTriggerButton = document.querySelector('.js-modal-trigger');
+// Ensure the modal starts open
+var modal = document.getElementById('modal-js-example');
+modal.classList.add('is-active');
 
-    // Add a click event listener to the button
-    modalTriggerButton.addEventListener('click', function () {
-      console.log('Button clicked!');
-      openModal();
-    });
-  });
+// Check for the presence of the "verifier" key in local storage
+var verifierKey = localStorage.getItem('verifier');
+if (verifierKey) {
+  // Close the modal if the "verifier" key is present
+  closeModal();
+  // Load the OAuth script only if the "verifier" key is present
+  loadScript();
+}
 
-  function openModal() {
-    var modal = document.getElementById('modal-js-example');
-    modal.classList.add('is-active');
-  }
+function loadScript() {
+  // Load the OAuth script with type="module"
+  var script = document.createElement('script');
+  script.type = 'module';
+  script.src = 'assets/JS/oauth-test.js';
+  document.head.appendChild(script);
+}
 
-  function closeModal() {
-    var modal = document.getElementById('modal-js-example');
-    modal.classList.remove('is-active');
-  }
+function closeModal() {
+  // Close the modal
+  modal.classList.remove('is-active');
+}
+
 
 
   document.addEventListener('DOMContentLoaded', function () {

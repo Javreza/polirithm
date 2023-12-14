@@ -11,6 +11,37 @@ body {
     
 
 }
+/* ----------------------------------------------------------------- */
+
+.modal-background{
+    pointer-events: none;
+}
+
+
+.modal-card-title{
+    justify-content: center;
+}
+.modal-card-body {
+    background-color: #1ED760;
+}
+.modal-card-body .box{
+    background-color: #35383b;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.modal-card-head,
+.modal-card-foot {
+    background-color: #35383b;
+    border: 0px solid;
+    justify-content: center;
+}
+
+.modal button {
+    background-color: #1ED760;
+    text-align: center;
+    
+}
 
 
 
@@ -26,10 +57,7 @@ body {
 
 
 
-
-
-
-
+/* ----------------------------------------------------------------- */
 
 .title{
     text-align: center;
