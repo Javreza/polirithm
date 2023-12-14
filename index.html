@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,39 +12,61 @@
 </head>
 <body>
 
-  <!----------------------------------------------------->
 
-  <header>
-    <h1 class="title">
-      Hello World
-    </h1>
-</header>
+    <!----------------------------------------------------->
+    <!-- Header with Logo and Navbar -->
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <!-- Your Logo -->
+                    <img src="assets/images/polirithm_logo.png" alt="Logo" width="112" height="28">
+                </a>
+            </div>
 
-<main>
-  <section>
-<navbar></navbar>
-<div class="container">
-<div class="card"></div> 
-</div> 
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <!-- navigation links -->
+                    <a class="navbar-item" href="#">
+                        Home
+                    </a>
+                    <a class="navbar-item" href="#">
+                        About
+                    </a>
+                    <a class="navbar-item" href="#">
+                        Services
+                    </a>
+                    <!-- Add links as needed -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            Hello World
+    </main>
 
 
- 
+    <!----------------------------------------------------->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                @2023
+            </p>
+        </div>
+    </footer>
 
-</section>
-</main>
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        @2023
-      </p>
-    </div>
-  </footer>
-   <!-- Added link to the jQuery library -->
-   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bulma script class for modal functionality -->
+    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+    <!-- Added link to the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-   <!-- KEEP - UNCOMMENT FOR SPOTIFY API LOGIN -->
-   <!-- <script type="module" src="./assets/JS/oauth-live.js"></script> -->
+    <!-- KEEP - UNCOMMENT FOR SPOTIFY API LOGIN -->
+    <!-- <script type="module" src="./assets/JS/oauth-live.js"></script> -->
 
-   <script src="./assets/JS/script.js"></script> 
-  </body>
+    <script src="./assets/JS/script.js"></script>
+</body>
+
 </html>
