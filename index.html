@@ -57,26 +57,39 @@
             <!-- ----------------------------------------------------- -->
             <div class="column">
               <h2 class="title is-4">Spotify</h2>
-              <div class="tabs is-boxed  is-medium ">
+              <div class="tabs is-boxed is-medium" id="tabs">
                 <ul>
-                  <li class="is-active"><a>Artists</a></li>
-                  <li><a>Tracks</a></li>
+                  <li class="is-active" data-target="artist-data"><a>Artists</a></li>
+                  <li data-target="track-data"><a>Tracks</a></li>
                 </ul>
               </div>
-              <!-- content card for artist data -->
-              <div>
-                <div class="box" id="content-box">
+              
+              <!-- Content card for artist data -->
+              <div class="tab-content active" id="artist-data">
+                <div class="box">
                   <h3 class="title is-10 is-underlined">Top Artists</h3>
-                  <ul class="content" id="top-list">
-                    
+                  <ul class="content list" id="top-artists-list">
+                    <li>test</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Content card for track data -->
+              <div class="tab-content" id="track-data">
+                <div class="box">
+                  <h3 class="title is-10 is-underlined">Top Tracks</h3>
+                  <ul class="content list" id="top-tracks-list">
+                    <!-- Add your track content here -->
+                    <li>test</li>
                   </ul>
                 </div>
               </div>
             </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
               <!-- ----------------------------------------------------- -->
-            <div class="column">
+          <div class="column">
             <h2 class="title is-4">Graph</h2>
-              <div class="box" id="content-box">
+              <div class="box" id="graph-content">
                   
               </div>
             <!-- ----------------------------------------------------- -->
@@ -89,7 +102,7 @@
           </div>
         </section>
 
-        <div class="modal is-active" id="modal-js-example">
+        <div class="modal is-active" id="modal">
           <div class="modal-background"></div>
           <div class="modal-card">
             <header class="modal-card-head">
@@ -102,7 +115,7 @@
               </div>
             </section>
             <footer class="modal-card-foot">
-              <button class="button is-large" onclick="loadScript('assets/JS/oauth-live.js')">Login to Spotify</button>
+              <button class="button is-large" onclick="loadScript('assets/JS/oauth-test.js')">Login to Spotify</button>
             </footer>
           </div>
         </div>

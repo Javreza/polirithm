@@ -45,18 +45,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* ----------------------------------------------------------------- */
 
 .title{
@@ -64,6 +52,16 @@ body {
     color: whitesmoke;
 
 }
+/* ----------------------------------------------------------------- */
+/* Tabs */
+.tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: inline;
+    
+  }
 
 .tabs {
     color: whitesmoke;
@@ -75,7 +73,21 @@ body {
     margin: 1px;
 }
 
+.tabs.is-boxed li.is-active {
+    background-color: #3C91E6;
+    color: white;
+    
+}
 
+div.box{
+    background-color: #3C91E6;
+}
+
+ul.content.list {
+    color: white;
+}
+
+/* ----------------------------------------------------------------- */
 
 #main-content {
     background-color: #1ED760;
@@ -98,10 +110,11 @@ h2.title {
 
 
 
-#content-box {
+#artist-data{
     color: white;
-    background-color:#3C91E6 ;
+    background-color:#3C91E6;
 }
+
 
 
 h3.title {
@@ -109,11 +122,16 @@ h3.title {
    
 }
 
-#top-list li {
+/* ----------------------------------------------------------------- */
+/* content list */
+.list li {
     background-color: #35383b;
     border-radius: 5px;
     padding: 10px;
 }
+
+/* ----------------------------------------------------------------- */
+
 
 
 .footer{
@@ -131,27 +149,3 @@ h3.title {
 
 
 
-/* <!-- <section class="columns section">
-<div class="column"> 
-  <h2 class="header">Spotify Data</h2>
-  <div class="box is-small" id="inner-box">
-    <section class="columns" id="spotify-main content-box">
-      <div class="column">
-        Main Data
-      </div>
-      <div class="column">
-        picture data
-      </div>
-    </section>
-  </div>
-</div>
-<div class="column"> 
-  <h2 class="header">Graph Data</h2>
-  <div class="box is-small" id="inner-box">
-    <section class="columns" id="graph-main content-box">
-      <div class="column">
-        Main Data
-      </div>
-    </section>
-  </div>
-</div> --> */

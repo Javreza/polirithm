@@ -94,7 +94,7 @@ function populateUI(profile, artists) {
 //loop to show top 5 artists
     for (let i = 0; i < artists.items.length; i++) {
         console.log(artists.items[i].name);
-        const artistsList = document.getElementById('top-list');
+        const artistsList = document.getElementById('top-artists-list');
         const listItem = document.createElement('li');
         listItem.textContent = artists.items[i].name;
         artistsList.appendChild(listItem);
