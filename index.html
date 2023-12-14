@@ -26,7 +26,7 @@
             </div>
 
             <div class="navbar-menu">
-                <div class="container is-widescreen navbar-start">
+                <div class="container navbar-start">
                     <!-- navigation links -->
                     <a class="navbar-item" href="#">
                         Home
@@ -44,12 +44,33 @@
     </header>
 
     <main>
-        <section id="content-box" class="container is-desktop">
-          <div class="columns is-centered">
-            <div class="column">
-              First column
+        <section class="section is-medium" > 
+          <div class="box is-large container is-fluid" id="main-content">
+
+            <div class="columns" id="content-cols">
+              <!-- ----------------------------------------------------- -->
+              <div class="column">
+                <h2 class="title is-4">Spotify</h2>
+                <div class="box" id="content-box">
+
+                  <ul></ul>
+                </div>
+              </div>
+              <!-- ----------------------------------------------------- -->
+              <div class="column">
+              <h2 class="title is-4">Graph</h2>
+                <div class="box" id="content-box">
+                  
+                </div>
+              <!-- ----------------------------------------------------- -->
+
+              </div>
+
 
             </div>
+            
+          </div>
+        </section>
     </main>
 
 
@@ -71,7 +92,7 @@
     <!-- KEEP - UNCOMMENT FOR SPOTIFY API LOGIN -->
     <!-- <script type="module" src="./assets/JS/oauth-live.js"></script> -->
 
-    <script src="./assets/JS/script.js"></script>
+    <script type="module" src="assets/JS/oauth-test.js"></script>
 </body>
 
 </html>
