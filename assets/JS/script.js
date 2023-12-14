@@ -1,3 +1,4 @@
+
 // Ensure the modal starts open
 var modal = document.getElementById('modal-js-example');
 modal.classList.add('is-active');
