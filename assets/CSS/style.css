@@ -4,25 +4,44 @@ body {
 
 
 
+
 .navbar {
     background-color: #3C91E6;
     min-height: 100px ;
+    
+
 }
+
+.title{
+    text-align: center;
+    color: whitesmoke;
+
+}
+
+.tabs {
+    color: whitesmoke;
+    }
+
+.tabs li{
+    background-color: #1ED760;
+    border-radius: 5px;
+    margin: 1px;
+}
+
 
 
 #main-content {
     background-color: #1ED760;
-    
+    color: white;
+    max-width: 1400px;
+
 }
 
-section.div #main-content {
-    color: white;
-    
-}
 
 #content-cols {
     background-color: #35383b;
     border-radius: 8px;
+    
     
 }
 
@@ -30,9 +49,23 @@ h2.title {
     color: whitesmoke;
 }
 
+
+
 #content-box {
     color: white;
     background-color:#3C91E6 ;
+}
+
+
+h3.title {
+   text-align: left;
+   
+}
+
+#top-list li {
+    background-color: #35383b;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 

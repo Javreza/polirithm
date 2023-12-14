@@ -44,33 +44,72 @@
     </header>
 
     <main>
-        <section class="section is-medium" > 
-          <div class="box is-large container is-fluid" id="main-content">
+      
+      <section  class="section container is-fluid">
+        <h1 class="title wlecome is-underlined is-large">Welcome:</h1>
+        <h2 class="title is-2 is-bold" id="displayName"></h2>
+      </section>
+      <section class="section is-medium" > 
+          
+        <div class="box is-large container" id="main-content">
 
-            <div class="columns" id="content-cols">
-              <!-- ----------------------------------------------------- -->
-              <div class="column">
-                <h2 class="title is-4">Spotify</h2>
+          <div class="columns" id="content-cols">
+            <!-- ----------------------------------------------------- -->
+            <div class="column">
+              <h2 class="title is-4">Spotify</h2>
+              <div class="tabs is-boxed  is-medium ">
+                <ul>
+                  <li class="is-active"><a>Artists</a></li>
+                  <li><a>Tracks</a></li>
+                </ul>
+              </div>
+              <!-- content card for artist data -->
+              <div>
                 <div class="box" id="content-box">
-
-                  <ul></ul>
+                  <h3 class="title is-10 is-underlined">Top Artists</h3>
+                  <ul class="content" id="top-list">
+                    
+                  </ul>
                 </div>
               </div>
+            </div>
               <!-- ----------------------------------------------------- -->
-              <div class="column">
-              <h2 class="title is-4">Graph</h2>
-                <div class="box" id="content-box">
+            <div class="column">
+            <h2 class="title is-4">Graph</h2>
+              <div class="box" id="content-box">
                   
-                </div>
-              <!-- ----------------------------------------------------- -->
-
               </div>
-
+            <!-- ----------------------------------------------------- -->
 
             </div>
+
+
+          </div>
             
           </div>
         </section>
+
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Modal title</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-success">Save changes</button>
+            <button class="button">Cancel</button>
+          </footer>
+        </div>
+      </div>
+
+
+
+
+
     </main>
 
 
@@ -91,8 +130,8 @@
 
     <!-- KEEP - UNCOMMENT FOR SPOTIFY API LOGIN -->
     <!-- <script type="module" src="./assets/JS/oauth-live.js"></script> -->
-
-    <script type="module" src="assets/JS/oauth-test.js"></script>
+    <script  src="assets/JS/script.js"></script>
+    <!-- <script type="module" src="assets/JS/oauth-test.js"></script> -->
 </body>
 
 </html>
