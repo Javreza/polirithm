@@ -2,4 +2,5 @@
 /* test passed. file linked */
 .title {
     font-weight: bolder;
+    color: red;
 }
