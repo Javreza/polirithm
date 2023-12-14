@@ -5,179 +5,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/polirithm_logo.png">
     <title>Polirithm</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- Bulma Version 0.9.4-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
-    <link rel="stylesheet" href="assets/CSS/style.css" />
-    <!-- Include hero.css below -->
-    <link rel="stylesheet" type="text/css" href="assets/CSS/hero.css"> 
-    <style>
-        .columns:nth-child(2) {
-            margin-top: -10rem;
-        }
-
-        ::-webkit-scrollbar {
-            height: 10px;
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #efefef;
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #d5d5d5;
-            border-radius: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #c4c4c4;
-        }
-
-        /* Add a new class for centering the logo */
-        .center-logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
-
 <body>
-    <section class="hero is-info is-small">
-        <div class="hero-body">
-            <div class="container">
-                <div class="center-logo-container">
-                    <p class="title is-hidden">
-                        <!-- TEST jQuery here to add "polirith" -->
-                        <!-- Use Bulma class to make text bold -->
-                        <span class="has-text-weight-bold">polirith</span>
-                    </p>
-                    <p class="subtitle">
-                        <!-- Add Bulma classes to center the logo -->
-                        <img src="./assets/images/polirithm_logo.png" alt="polirithm logo." class="image is-64x64">
-                    </p>
-                </div>
-            </div>
-        </div>
+  <header>
+    
+  </header>
+  <main>
+    <section>
+
     </section>
-    <!-- Use Bulma navbar class -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                <!-- Add your navigation items here if needed -->
-            </div>
-        </div>
-    </nav>
-    <!-- Bulma message class for the box -->
-    <div class="message is-info">
-        <div class="message-body has-text-centered">
-            <span class="tag is-primary">New</span> Here we have modal cards. When you click on them they will open
-            functional modal examples.
-        </div>
-    </div>
-    <section class="container">
-        <!-- Bulma columns class -->
-        <div class="columns features">
-            <!-- Bulma column class -->
-            <div class="column is-4">
-                <!-- Bulma card class -->
-                <div class="card is-shady">
-                    <div class="card-image">
-                        <!-- Bulma image class -->
-                        <figure class="image is-4by3">
-                            <img src="https://images.unsplash.com/photo-1515555230216-82228b88ea98?auto=format&amp;fit=crop&amp;w=900&amp;q=60"
-                                alt="Placeholder image" class="modal-button" data-target="modal-image2">
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="content">
-                            <!-- Bulma title class -->
-                            <h4 class="title is-4">Click on image above</h4>
-                            <!-- Bulma content class -->
-                            <p>Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec.
-                                Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut
-                                consequat semper viverra nam.</p>
-                            <!-- Bulma button class -->
-                            <span class="button is-link modal-button" data-target="modal-image2">Image modal</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat the structure for other columns as needed -->
-        </div>
-    </section>
-    <!-- Bulma footer class -->
-    <footer class="footer">
-        <!-- Bulma section class -->
-        <section class="section">
-            <div class="container">
-                <!-- Bulma columns class -->
-                <div class="columns is-multiline">
-                    <!-- Repeat the structure for other columns as needed -->
-                </div>
-            </div>
-        </section>
-        <!-- Bulma content class -->
-        <div class="content has-text-centered">
-            <!-- Bulma control and level-item classes -->
-            <div class="control level-item">
-                <a href="https://github.com/BulmaTemplates/bulma-templates">
-                    <!-- Bulma tags class -->
-                    <div class="tags has-addons">
-                        <span class="tag is-dark">Bulma Templates</span>
-                        <span class="tag is-info">MIT license</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </footer>
-    <!-- Bulma modals -->
-    <!-- 3dFlipVertical card tiny -->
-    <div id="modal-card" class="modal modal-fx-3dSlit">
-        <!-- Content of the modal -->
-    </div>
-    <!-- end tiny modal card -->
-    <!-- 3dFlipVertical card tiny [butterfly] -->
-    <div id="modal-card2" class="modal modal-fx-3dSlit">
-        <!-- Content of the modal -->
-    </div>
-    <!-- end tiny modal card -->
-    <!-- Image modal -->
-    <div id="modal-image2" class="modal modal-fx-3dSlit">
-        <!-- Content of the modal -->
-    </div>
-    <!-- Image modal -->
-    <div id="modal-image4" class="modal modal-fx-3dSlit">
-        <!-- Content of the modal -->
-    </div>
-    <!-- Image modal-->
-    <div id="modal-image" class="modal modal-fx-superScaled">
-        <!-- Content of the modal -->
-    </div>
-    <!-- Bulma script class for modal functionality -->
-    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-<<<<<<< HEAD
-    <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
-        integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
-    <script src="../js/wild.js"></script>
-    <script src="./assets/JS/script.js"></script>
-</body>
-
-</html>
-
-
-=======
-<script
-  src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
-  integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
-  crossorigin="anonymous"></script>    <script src="../js/wild.js"></script>
-  <script src="./assets/JS/script.js"></script> 
+  </main>
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="module" src="assets/JS/oauth-live.js"></script> 
   </body>
 </html>
->>>>>>> 5787070efe272f6d82e28b04483490bb0281c787
