@@ -46,18 +46,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* ----------------------------------------------------------------- */
 
 .title{
@@ -65,6 +53,18 @@ body {
     color: whitesmoke;
 
 }
+/* ----------------------------------------------------------------- */
+/* Tabs */
+
+
+.tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: inline;
+    
+  }
 
 .tabs {
     color: whitesmoke;
@@ -76,7 +76,29 @@ body {
     margin: 1px;
 }
 
+.tabs.is-boxed li.is-active {
+    background-color: #3C91E6;
+    color: white;
+    
+}
 
+
+div.box{
+    background-color: #3C91E6;
+}
+
+div#shadow-box{
+    background-color: #1ED760;
+}
+
+ul.content.list {
+    color: whitesmoke;
+}
+
+#main-content.box {
+    background-color: #35383b;
+}
+/* ----------------------------------------------------------------- */
 
 #main-content {
     background-color: #1ED760;
@@ -99,22 +121,31 @@ h2.title {
 
 
 
-#content-box {
+#artist-data,
+#track-data{
     color: white;
-    background-color:#3C91E6 ;
+    background-color:#3C91E6;
 }
 
+li.is-active a{
+    background-color: #3C91E6;
+}
 
 h3.title {
    text-align: left;
    
 }
 
-#top-list li {
+/* ----------------------------------------------------------------- */
+/* content list */
+.list li {
     background-color: #35383b;
     border-radius: 5px;
     padding: 10px;
 }
+
+/* ----------------------------------------------------------------- */
+
 
 
 .footer{
@@ -156,63 +187,3 @@ h3.title {
     </section>
   </div>
 </div> --> */
-=======
-/* test CSS file */
-/* test passed. file linked */
-.title {
-    font-weight: bolder;
-    color: red;
-}
-
-.columns:nth-child(2) {
-    margin-top: -10rem;
-}
-
-::-webkit-scrollbar {
-    height: 10px;
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #efefef;
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #d5d5d5;
-    border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #c4c4c4;
-}
-
-/* Add a new class for centering the logo */
-.center-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-/* style.css */
-
-/* Set a black background for the entire page */
-body {
-    background-color: #000;
-}
-
-/* Customize the navbar with a dark royal blue color */
-.navbar {
-    background-color: #001f3f; /* Dark royal blue color */
-}
-
-/* Customize the color of the navigation links */
-.navbar-item {
-    color: #fff; /* White text color */
-}
-
-/* Customize the color of the active navigation link */
-.navbar-item.is-active {
-    background-color: #003366; /* Darker blue for active link */
-}
-
