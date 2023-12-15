@@ -86,17 +86,15 @@ async function fetchTopArtists(token) {
 }
 
 
-function populateUI(profile, artists) {
-    document.getElementById("displayName").innerText = profile.display_name;
-    document.getElementById("id").innerText = profile.id;
-    document.getElementById("email").innerText = profile.email;
-    document.getElementById("uri").innerText = profile.uri;
-    document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
-    document.getElementById("url").innerText = profile.href;
-    document.getElementById("url").setAttribute("href", profile.href);
 
+function populateUI(profile, artists) {
+    document.getElementById("displayName").textContent = profile.display_name;
+    
+    // document.getElementById("url").setAttribute("href", profile.uri);
+//loop to show top 5 artists
     for (let i = 0; i < artists.items.length; i++) {
         console.log(artists.items[i].name);
+        const artistsList = document.getElementById('top-list');
         const listItem = document.createElement('li');
         listItem.textContent = artists.items[i].name;
         artistsList.appendChild(listItem);

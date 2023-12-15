@@ -1,3 +1,162 @@
+
+body {
+    background-color: 	#35383b;
+}
+
+
+
+
+.navbar {
+    background-color: #3C91E6;
+    min-height: 100px ;
+    
+
+}
+/* ----------------------------------------------------------------- */
+
+.modal-background{
+    pointer-events: none;
+}
+
+
+.modal-card-title{
+    justify-content: center;
+}
+.modal-card-body {
+    background-color: #1ED760;
+}
+.modal-card-body .box{
+    background-color: #35383b;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.modal-card-head,
+.modal-card-foot {
+    background-color: #35383b;
+    border: 0px solid;
+    justify-content: center;
+}
+
+.modal button {
+    background-color: #1ED760;
+    text-align: center;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------- */
+
+.title{
+    text-align: center;
+    color: whitesmoke;
+
+}
+
+.tabs {
+    color: whitesmoke;
+    }
+
+.tabs li{
+    background-color: #1ED760;
+    border-radius: 5px;
+    margin: 1px;
+}
+
+
+
+#main-content {
+    background-color: #1ED760;
+    color: white;
+    max-width: 1400px;
+
+}
+
+
+#content-cols {
+    background-color: #35383b;
+    border-radius: 8px;
+    
+    
+}
+
+h2.title {
+    color: whitesmoke;
+}
+
+
+
+#content-box {
+    color: white;
+    background-color:#3C91E6 ;
+}
+
+
+h3.title {
+   text-align: left;
+   
+}
+
+#top-list li {
+    background-color: #35383b;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.footer{
+    background-color: #3C91E6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* <!-- <section class="columns section">
+<div class="column"> 
+  <h2 class="header">Spotify Data</h2>
+  <div class="box is-small" id="inner-box">
+    <section class="columns" id="spotify-main content-box">
+      <div class="column">
+        Main Data
+      </div>
+      <div class="column">
+        picture data
+      </div>
+    </section>
+  </div>
+</div>
+<div class="column"> 
+  <h2 class="header">Graph Data</h2>
+  <div class="box is-small" id="inner-box">
+    <section class="columns" id="graph-main content-box">
+      <div class="column">
+        Main Data
+      </div>
+    </section>
+  </div>
+</div> --> */
+=======
 /* test CSS file */
 /* test passed. file linked */
 .title {
@@ -56,3 +215,4 @@ body {
 .navbar-item.is-active {
     background-color: #003366; /* Darker blue for active link */
 }
+
