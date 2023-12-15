@@ -1,3 +1,4 @@
+
 // Ensure the modal starts open
 var modal = document.getElementById('modal');
 modal.classList.add('is-active');
@@ -42,5 +43,6 @@ $(document).ready(function () {
       $("#" + target).addClass("active");
     });
   });
+
 
 
