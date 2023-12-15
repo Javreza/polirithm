@@ -54,6 +54,8 @@ body {
 }
 /* ----------------------------------------------------------------- */
 /* Tabs */
+
+
 .tab-content {
     display: none;
   }
@@ -79,14 +81,22 @@ body {
     
 }
 
+
 div.box{
     background-color: #3C91E6;
+}
+
+div#shadow-box{
+    background-color: #1ED760;
 }
 
 ul.content.list {
     color: whitesmoke;
 }
 
+#main-content.box {
+    background-color: #35383b;
+}
 /* ----------------------------------------------------------------- */
 
 #main-content {
@@ -110,12 +120,15 @@ h2.title {
 
 
 
-#artist-data{
+#artist-data,
+#track-data{
     color: white;
     background-color:#3C91E6;
 }
 
-
+li.is-active a{
+    background-color: #3C91E6;
+}
 
 h3.title {
    text-align: left;

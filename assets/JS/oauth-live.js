@@ -1,6 +1,9 @@
 const clientId = "b04a7dd3004d4953af97c0266139356f"; // client ID of app
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
+// const bypassCodeCheck = flase; // added for testing only
+//&&  !bypassCodeCheck
+
 
 if (!code) {
     redirectToAuthCodeFlow(clientId);
@@ -8,7 +11,8 @@ if (!code) {
     const accessToken = await getAccessToken(clientId, code);
     const profile = await fetchProfile(accessToken);
     const artists = await fetchTopArtists(accessToken);
-    populateUI(profile, artists);
+    const tracks  = await fetchTopTracks(accessToken);
+    populateUI(profile, artists, tracks);
     
 }
 
@@ -78,27 +82,44 @@ async function fetchProfile(token) {
 } 
 
 async function fetchTopArtists(token) {
-    const topArtists = await fetch('https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=5', {
+    const topArtists = await fetch('https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10', {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
     });
 
     return await topArtists.json();
 }
 
+async function fetchTopTracks(token) {
+    const topTracks = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=10', {
+        method: "GET", headers: { Authorization: `Bearer ${token}` }
+    });
+
+    return await topTracks.json();
+}
 
 
-function populateUI(profile, artists) {
+function populateUI(profile, artists, tracks) {
     document.getElementById("displayName").textContent = profile.display_name;
     
     // document.getElementById("url").setAttribute("href", profile.uri);
-//loop to show top 5 artists
-    for (let i = 0; i < artists.items.length; i++) {
+//loop to show top 10 artists
+    for (let i = 1; i < artists.items.length; i++) {
         console.log(artists.items[i].name);
         const artistsList = document.getElementById('top-artists-list');
         const listItem = document.createElement('li');
-        listItem.textContent = artists.items[i].name;
+        listItem.textContent = i + ". " + artists.items[i].name;
         artistsList.appendChild(listItem);
+    }
+
+    for (let i = 1; i < tracks.items.length; i++) {
+        console.log(tracks.items[i].name);
+        const tracksList = document.getElementById('top-tracks-list');
+        const listItem = document.createElement('li');
+        listItem.textContent = i + ". " + tracks.items[i].name;
+        tracksList.appendChild(listItem);
     }
     
 }
+
+
 

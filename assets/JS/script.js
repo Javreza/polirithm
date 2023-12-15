@@ -14,7 +14,8 @@ function loadScript() {
   // Load the OAuth script with type="module"
   var script = document.createElement('script');
   script.type = 'module';
-  script.src = 'assets/JS/oauth-test.js';
+//   script.src = 'assets/JS/oauth-test.js';
+script.src = 'assets/JS/oauth-live.js';
   document.head.appendChild(script);
 }
 
@@ -30,16 +31,12 @@ $(document).ready(function () {
 
     tabs.click(function (e) {
       e.preventDefault();
-
       // Remove 'is-active' class from all tabs
       tabs.removeClass("is-active");
-
       // Add 'is-active' class to the clicked tab
       $(this).addClass("is-active");
-
       // Hide all tab contents
       tabContentBoxes.removeClass("active");
-
       // Show the corresponding tab content based on the data-target attribute
       const target = $(this).data("target");
       $("#" + target).addClass("active");
