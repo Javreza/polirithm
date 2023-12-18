@@ -120,6 +120,3 @@ function populateUI(profile, artists, tracks) {
     }
     
 }
-
-
-

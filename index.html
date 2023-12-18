@@ -1,153 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Polirithm</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <!-- Bulma Version 0.9.4-->
-    <link rel="stylesheet" href="assets/CSS/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="assets/CSS/style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polirithm</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="assets/CSS/reset.css">
+  <!-- Bulma Version 0.9.4-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/CSS/style.css" />
 </head>
 <body>
-
-
-    <!----------------------------------------------------->
-    <!-- Header with Logo and Navbar -->
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <!-- Your Logo -->
-                    <img src="./assets/images/polirithm_logo.png" alt="Polirithm Logo" width="112" height="28">
-                </a>
-            </div>
-
-            <div class="navbar-menu">
-                <div class="container navbar-start">
-                    <!-- navigation links -->
-                    <a class="navbar-item" href="#">
-                        Home
-                    </a>
-                    <a class="navbar-item" href="#">
-                        About
-                    </a>
-                    <a class="navbar-item" href="#">
-                        Services
-                    </a>
-                    <!-- Add links as needed -->
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-
-      
-      <section  class="section container is-fluid">
-        <h1 class="title wlecome is-underlined is-large">Welcome:</h1>
-        <h2 class="title is-1 is-bold" id="displayName"></h2>
-        <h2 class="title">Here's some stats about your listing history!</h2>
-      </section>
-      <section class="section is-medium" > 
-        <div class="box" id="shadow-box">
+  <!-- Header with Logo and Navbar -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <!-- Your Logo -->
+          <img src="./assets/images/polirithm_logo.png" alt="Polirithm Logo" width="112" height="28">
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="container navbar-start">
+          <!-- navigation links -->
+          <a class="navbar-item" href="#">
+            Home
+          </a>
+          <a class="navbar-item" href="#">
+            About
+          </a>
+          <a class="navbar-item" href="#">
+            Services
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="section container is-fluid">
+      <h1 class="title wlecome is-underlined is-large">Welcome:</h1>
+      <h2 class="title is-1 is-bold" id="displayName"></h2>
+      <h2 class="title">Here's some stats about your listing history!</h2>
+    </section>
+    <section class="section is-medium">
+      <div class="box" id="shadow-box">
+        <div class="box is-large container" id="main-content">
+          <div class="tabs is-boxed is-medium" id="tabs">
+            <ul>
+              <li class="is-active" data-target="artist-data"><a>Artists</a></li>
+              <li data-target="track-data"><a>Tracks</a></li>
+            </ul>
+          </div>
           <div class="box is-large container" id="main-content">
-            <div class="tabs is-boxed is-medium" id="tabs">
-                <ul>
-                    <li class="is-active" data-target="artist-data"><a>Artists</a></li>
-                    <li data-target="track-data"><a>Tracks</a></li>
-                </ul>
-            </div>  
-          <div class="box is-large container" id="main-content">
-            
             <div class="columns" id="content-cols">
-              <!-- ----------------------------------------------------- -->
               <div class="column">
                 <h2 class="title is-4">Spotify</h2>
-                
+                <!-- Content card for track data -->
                 <div class="tab-content active" id="artist-data">
                   <div class="box">
                     <h3 class="title is-10 is-underlined">Top Artists</h3>
                     <ul class="content list" id="top-artists-list">
-                      
+                      <!-- Add your artist content here -->
                     </ul>
                   </div>
                 </div>
-                
                 <!-- Content card for track data -->
                 <div class="tab-content" id="track-data">
                   <div class="box">
                     <h3 class="title is-10 is-underlined">Top Tracks</h3>
                     <ul class="content list" id="top-tracks-list">
                       <!-- Add your track content here -->
-                      
                     </ul>
                   </div>
                 </div>
               </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                <!-- ----------------------------------------------------- -->
-            <div class="column">
-              <h2 class="title is-4">Graph</h2>
+              <!-- Content for graph data -->
+              <div class="column">
+                <h2 class="title is-4">Graph</h2>
                 <div class="box" id="graph-content">
-                    
+                  <!-- graph data goes here -->
                 </div>
-              <!-- ----------------------------------------------------- -->
-
               </div>
-
-
             </div>
-              
-            </div>
+          </div>
+        </div>
+    </section>
+    <div class="modal is-active" id="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <img class="modal-card-title" src="assets/images/polirithm_logo.png" alt="logo version of Polirithm">
+        </header>
+        <section class="modal-card-body">
+          <div class="box">
+            <p class="content"> Welcome to Polirithm!</p>
+            <p class="content"> To continue, you need to login to Spotify by clicking the button below.</p>
           </div>
         </section>
+        <footer class="modal-card-foot">
+          <button class="button is-large" onclick="loadScript('assets/JS/oauth-test.js')">Login to Spotify</button>
+        </footer>
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        @2023
+      </p>
+    </div>
+  </footer>
+  <!-- Bulma script class for modal functionality -->
+  <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
+  <!-- Added link to the jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- SPOTIFY API LOGIN SCREEN -->
+  <script src="./assets/JS/script.js"></script>
+   <!-- NOT NEEDED HERE, Spotify JS now in script.JS >> <script type="module" src="./assets/JS/oauth-live.js"></script> -->
 
-        <div class="modal is-active" id="modal">
-          <div class="modal-background"></div>
-          <div class="modal-card">
-            <header class="modal-card-head">
-              <img class="modal-card-title" src="assets/images/polirithm_logo.png" alt="logo version of Polirithm">
-            </header>
-            <section class="modal-card-body">
-              <div class="box">
-                <p class="content"> Welcome to Polirithm!</p>
-                <p class="content"> To continue, you need to login to Spotify by clicking the button below.</p>
-              </div>
-            </section>
-            <footer class="modal-card-foot">
-              <button class="button is-large" onclick="loadScript('assets/JS/oauth-test.js')">Login to Spotify</button>
-            </footer>
-          </div>
-        </div>
-      
-        
-    </main>
-
-
-    <!----------------------------------------------------->
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p>
-                @2023
-            </p>
-        </div>
-    </footer>
-
-    <!-- Bulma script class for modal functionality -->
-    <script src="https://unpkg.com/bulma-modal-fx/dist/js/modal-fx.min.js"></script>
-    <!-- Added link to the jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <!-- KEEP - UNCOMMENT FOR SPOTIFY API LOGIN -->
-    <!-- <script type="module" src="./assets/JS/oauth-live.js"></script> -->
-    <script  src="assets/JS/script.js"></script>
-    <!-- <script type="module" src="assets/JS/oauth-test.js"></script> -->
+  <!-- TEST -->
+  <!-- <script src="./assets/JS/chartTEST.js"></script> -->
+ 
 </body>
-
 </html>
-
-https://javreza.github.io/polirithm/
