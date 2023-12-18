@@ -15,7 +15,7 @@ function loadScript() {
   var script = document.createElement('script');
   script.type = 'module';
 //   script.src = 'assets/JS/oauth-test.js';
-script.src = 'assets/JS/oauth-test.js';
+script.src = 'assets/JS/oauth-live.js';
   document.head.appendChild(script);
 }
 
