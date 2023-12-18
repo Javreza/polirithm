@@ -41,6 +41,9 @@ $(document).ready(function () {
     $("#" + target).addClass("active");
   });
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 });
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

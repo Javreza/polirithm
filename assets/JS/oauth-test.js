@@ -121,6 +121,9 @@ function populateUI(profile, artists, tracks) {
     
 <<<<<<< Updated upstream
 }
+<<<<<<< Updated upstream
 =======
 }
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
