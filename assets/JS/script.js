@@ -30,13 +30,27 @@ $(document).ready(function () {
 
   tabs.click(function (e) {
     e.preventDefault();
+    // Remove classes from all tabs and tab content
     tabs.removeClass("is-active");
-    $(this).addClass("is-active");
     tabContentBoxes.removeClass("active");
+    // Add "is-active" class to the clicked tab
+    $(this).addClass("is-active");
+
     // Show the corresponding tab content based on the data-target attribute
     const target = $(this).data("target");
     $("#" + target).addClass("active");
+
+    const activeGraphId = $(this).data("graph-id");
+  
+    // Check which tab has the "is-active" class and add the "active" class to the corresponding graph
+    if ($(this).hasClass("is-active")) {
+      $("#" + activeGraphId).addClass("active");
+    }
   });
+
+  
+
+
 });
 
 const yearEl = document.getElementById('currentYear');

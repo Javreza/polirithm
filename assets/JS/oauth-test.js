@@ -13,7 +13,7 @@ if (!code) {
     const artists = await fetchTopArtists(accessToken);
     const tracks  = await fetchTopTracks(accessToken);
     populateUI(profile, artists, tracks);
-    populateGraph(artists);
+    populateGraph(artists, tracks);
     
 }
 
@@ -152,10 +152,13 @@ function populateUI(profile, artists, tracks) {
 
 }
 
-function populateGraph(artists) {
+function populateGraph(artists, tracks) {
     // Clear existing content
-    const graphContent = document.getElementById('graph-content');
-    graphContent.innerHTML = '';
+    const graphContentArtist = document.getElementById('graph-content-artist');
+    const graphContentTrack = document.getElementById('graph-content-track');
+
+    graphContentArtist.innerHTML = '';
+    graphContentTrack.innerHTML = '';
 
     // Quickchart API
     const qcURL = "https://quickchart.io/chart?c=";
@@ -170,23 +173,35 @@ function populateGraph(artists) {
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
 
-    // const today = mm + '/' + dd + '/' + yyyy;
-    // let currentYear = yyyy;
+    today = mm + '/' + dd + '/' + yyyy;
+    let currentYear = yyyy;
 
-    // Populate artistsName array
+    // Populate artistsName 
     for (let i = 0; i < artists.items.length; i++) {
         artistsName.push(artists.items[i].name);
     }
 
-    // Populate other arrays (you may replace these with actual Spotify data)
+    // Populate aPopularity 
     for (let i = 0; i < artists.items.length; i++) {
         aPopularity.push(artists.items[i].popularity);
     }
-   
 
-    
+    // Populate tracksName 
+    for (let i = 0; i < tracks.items.length; i++) {
+        tracksName.push(tracks.items[i].name);
+    }
+    // Populate tPopularity 
+    for (let i = 0; i < tracks.items.length; i++) {
+        tPopularity.push(tracks.items[i].popularity);
+    }
+
+    console.log("Artists Name:", artistsName);
+    console.log("Artists Popularity:", aPopularity);
+    console.log("Tracks Name:", tracksName);
+    console.log("Tracks Popularity:", tPopularity);
+
     const aChartJSON = {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
             labels: artistsName,
             datasets: [{
@@ -197,14 +212,16 @@ function populateGraph(artists) {
     };
 
     const tChartJSON = {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
             labels: tracksName,
             datasets: [{
                 label: `Tracks ${today}`,
                 data: tPopularity,
             }]
-        }
+            
+        },
+        
     };
 
     // Convert objects to JSON
@@ -216,15 +233,15 @@ function populateGraph(artists) {
     const imgElT = document.createElement("img");
     const pEL = document.createElement("p");
 
-    // // Append elements based on active tab
-    // if (document.getElementById('artist-data').classList.contains('active')) {
-    //     graphContent.appendChild(imgElA);
-    //     imgElA.setAttribute("src", aChart);
-    //     imgElA.setAttribute("alt", "Spotify artists graph.")
-    // } else if (document.getElementById('track-data').classList.contains('active')) {
-    //     graphContent.appendChild(imgElT);
-    //     imgElT.setAttribute("src", tChart);
-    //     imgElT.setAttribute("alt", "Spotify tracks graph.")
+    // Append elements based on active tab
+    
+    graphContentArtist.appendChild(imgElA);
+    imgElA.setAttribute("src", aChart);
+    imgElA.setAttribute("alt", "Spotify artists graph.")
+    
+    graphContentTrack.appendChild(imgElT);
+    imgElT.setAttribute("src", tChart);
+    imgElT.setAttribute("alt", "Spotify tracks graph.")
     // } else {
     //     graphContent.appendChild(pEL);
     //     pEL.innerHTML = "Select Spotify Artist or Tracks tab.";
