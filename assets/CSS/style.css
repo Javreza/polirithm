@@ -1,33 +1,44 @@
-
 body {
-    background-color: 	#35383b;
+    background-color: #35383b;
+    font-family: sans-serif;
+    color: white;
 }
 
+header {
+    background-color: #3C91E6;
+    text-align: center;
+}
 
-
+.nav {
+    padding: 20px
+}
 
 .navbar {
     background-color: #3C91E6;
-    min-height: 100px ;
-    
-
 }
-/* ----------------------------------------------------------------- */
 
-.modal-background{
+.navbar a {
+    color: white;
+}
+
+#graph-content {
+    background-color: white;
+}
+
+.modal-background {
     pointer-events: none;
 }
 
-
-.modal-card-title{
+.modal-card-title {
     justify-content: center;
 }
+
 .modal-card-body {
     background-color: #1ED760;
 }
-.modal-card-body .box{
+
+.modal-card-body .box {
     background-color: #35383b;
-    color: whitesmoke;
     text-align: center;
 }
 
@@ -41,36 +52,23 @@ body {
 .modal button {
     background-color: #1ED760;
     text-align: center;
-    
 }
 
-
-
-/* ----------------------------------------------------------------- */
-
-.title{
+.title {
     text-align: center;
-    color: whitesmoke;
-
+    color: white;
 }
-/* ----------------------------------------------------------------- */
+
 /* Tabs */
-
-
 .tab-content {
     display: none;
-  }
+}
 
-  .tab-content.active {
+.tab-content.active {
     display: inline;
-    
-  }
+}
 
-.tabs {
-    color: whitesmoke;
-    }
-
-.tabs li{
+.tabs li {
     background-color: #1ED760;
     border-radius: 5px;
     margin: 1px;
@@ -78,65 +76,46 @@ body {
 
 .tabs.is-boxed li.is-active {
     background-color: #3C91E6;
-    color: white;
-    
 }
 
-
-div.box{
+div.box {
     background-color: #3C91E6;
 }
 
-div#shadow-box{
+div#shadow-box {
     background-color: #1ED760;
 }
 
-ul.content.list {
-    color: whitesmoke;
-}
-
-#main-content.box {
+#main-content.box,
+#about.box {
     background-color: #35383b;
 }
-/* ----------------------------------------------------------------- */
 
-#main-content {
+#main-content,
+#about.box {
     background-color: #1ED760;
     color: white;
-    max-width: 1400px;
-
+    /*max-width: 1400px;*/
 }
-
 
 #content-cols {
     background-color: #35383b;
     border-radius: 8px;
-    
-    
 }
-
-h2.title {
-    color: whitesmoke;
-}
-
-
 
 #artist-data,
-#track-data{
-    color: white;
-    background-color:#3C91E6;
+#track-data {
+    background-color: #3C91E6;
 }
 
-li.is-active a{
+li.is-active a {
     background-color: #3C91E6;
 }
 
 h3.title {
-   text-align: left;
-   
+    text-align: left;
 }
 
-/* ----------------------------------------------------------------- */
 /* content list */
 .list li {
     background-color: #35383b;
@@ -144,10 +123,12 @@ h3.title {
     padding: 10px;
 }
 
-/* ----------------------------------------------------------------- */
+#about {
+    background-color: white;
+    color: white;
+}
 
-
-
-.footer{
+footer {
     background-color: #3C91E6;
+    padding: 20px;
 }

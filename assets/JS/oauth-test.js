@@ -119,11 +119,4 @@ function populateUI(profile, artists, tracks) {
         tracksList.appendChild(listItem);
     }
     
-<<<<<<< Updated upstream
 }
-<<<<<<< Updated upstream
-=======
-}
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes

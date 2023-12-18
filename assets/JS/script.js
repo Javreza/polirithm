@@ -40,10 +40,7 @@ $(document).ready(function () {
     const target = $(this).data("target");
     $("#" + target).addClass("active");
   });
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 });
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
+const yearEl = document.getElementById('currentYear');
+yearEl.innerHTML = "@" + currentYear;

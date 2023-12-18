@@ -15,6 +15,7 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 today = mm + '/' + dd + '/' + yyyy;
+currentYear = yyyy;
 
 ////////// START testing without Spotify data //////////
 artistsName.push("A");
@@ -40,42 +41,6 @@ const tChartJSON = "{type:'bar',data:{labels:[1,2,3],datasets:[{label:'Tracks " 
 const aChart = qcURL + aChartJSON;
 const tChart = qcURL + tChartJSON;
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-/*
-{
-    type: 'bar',                                // Show a bar chart
-    data: {
-      labels: [2012, 2013, 2014, 2015, 2016],   // Set X-axis labels
-      datasets: [{
-        label: 'Users',                         // Create the 'Users' dataset
-        data: [120, 60, 50, 180, 120]           // Add data to the chart
-      }]
-    }
-  }
-
-https://quickchart.io/chart?c={type:'bar',data:{labels:[2012],datasets:[{label:'Users',data:[120,60,50,180,120]}]}}
-https://quickchart.io/chart?c={type:'bar',data:{labels:[A,B,C],datasets:[{label:'Artists',data:[1,50,99]}]}}
-
-  {type:'bar',data:{labels:[2012,2013,2014,2015, 2016],datasets:[{label:'Users',data:[120,60,50,180,120]}]}}
- "{type: 'bar', data: {labels: [A,B,C], datasets: [{label: 'Artists 12/17/2023', data: [1,50,99]}]}}"
- 
-*/
-
-const graphContent = document.getElementById('graph-content');
-const imgElA = document.createElement("img");
-const imgElT = document.createElement("img");
-
-graphContent.appendChild(imgElA);
-imgElA.setAttribute("src", aChart);
-imgElA.setAttribute("alt", "Spotify aritists graph.")
-
-graphContent.appendChild(imgElT);
-imgElT.setAttribute("src", tChart);
-imgElT.setAttribute("alt", "Spotify tracks graph.")
-=======
-=======
->>>>>>> Stashed changes
 const graphContent = document.getElementById('graph-content');
 const imgElA = document.createElement("img");
 const imgElT = document.createElement("img");
@@ -95,7 +60,6 @@ else {
     graphContent.appendChild(pEL);
     pEL.innerHTML = "Select Spotify Artist or Tracks tab.";
 }
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
+const yearEl = document.getElementById('currentYear');
+yearEl.innerHTML = "@" + currentYear;
