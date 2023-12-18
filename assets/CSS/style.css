@@ -125,6 +125,12 @@ div#shadow-box {
     border-radius: 8px;
 }
 
+#content-cols div.column{
+    display: flex;
+    flex-direction: column;
+    
+}
+
 #data-cols{
     margin: 10px;
 }
@@ -257,34 +263,7 @@ li img {
     margin-right: auto;
 }
 
-
-
-
-
-
-
-
-/* <!-- <section class="columns section">
-<div class="column"> 
-  <h2 class="header">Spotify Data</h2>
-  <div class="box is-small" id="inner-box">
-    <section class="columns" id="spotify-main content-box">
-      <div class="column">
-        Main Data
-      </div>
-      <div class="column">
-        picture data
-      </div>
-    </section>
-  </div>
-</div>
-<div class="column"> 
-  <h2 class="header">Graph Data</h2>
-  <div class="box is-small" id="inner-box">
-    <section class="columns" id="graph-main content-box">
-      <div class="column">
-        Main Data
-      </div>
-    </section>
-  </div>
-</div> --> */
+#graph-content-artist img, 
+#graph-content-track img {
+    margin-top: 35%;
+  }

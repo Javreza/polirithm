@@ -161,7 +161,7 @@ function populateGraph(artists, tracks) {
     graphContentTrack.innerHTML = '';
 
     // Quickchart API
-    const qcURL = "https://quickchart.io/chart?c=";
+    const qcURL = `https://quickchart.io/chart?c=`;
     let artistsName = [];
     let aPopularity = [];
     let tracksName = [];
@@ -200,6 +200,25 @@ function populateGraph(artists, tracks) {
     console.log("Tracks Name:", tracksName);
     console.log("Tracks Popularity:", tPopularity);
 
+    //chart options
+    const commonOptions = {
+        maintainAspectRatio: false,
+        responsive: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: 'white' // Set the desired font color
+            }
+          }
+        }
+      };
+
+
     const aChartJSON = {
         type: 'horizontalBar',
         data: {
@@ -207,8 +226,12 @@ function populateGraph(artists, tracks) {
             datasets: [{
                 label: `Artists ${today}`,
                 data: aPopularity,
+                backgroundColor: 'green',
+                color:  "white"
+                
             }]
-        }
+        },
+        options: commonOptions,
     };
 
     const tChartJSON = {
@@ -218,12 +241,15 @@ function populateGraph(artists, tracks) {
             datasets: [{
                 label: `Tracks ${today}`,
                 data: tPopularity,
+                backgroundColor: 'green',
+                color:  "white"
             }]
-            
-        },
-        
+        }, 
+        options: commonOptions, 
     };
 
+   
+   
     // Convert objects to JSON
     const aChart = qcURL + JSON.stringify(aChartJSON);
     const tChart = qcURL + JSON.stringify(tChartJSON);
@@ -242,8 +268,5 @@ function populateGraph(artists, tracks) {
     graphContentTrack.appendChild(imgElT);
     imgElT.setAttribute("src", tChart);
     imgElT.setAttribute("alt", "Spotify tracks graph.")
-    // } else {
-    //     graphContent.appendChild(pEL);
-    //     pEL.innerHTML = "Select Spotify Artist or Tracks tab.";
-    // }
+    
 };
