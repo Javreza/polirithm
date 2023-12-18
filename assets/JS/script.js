@@ -40,4 +40,7 @@ $(document).ready(function () {
     const target = $(this).data("target");
     $("#" + target).addClass("active");
   });
+<<<<<<< Updated upstream
 });
+=======
+>>>>>>> Stashed changes

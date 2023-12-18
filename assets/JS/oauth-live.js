@@ -147,6 +147,7 @@ const tChartJSON = "{type:'bar',data:{labels:[" + tracksName + "],datasets:[{lab
 const aChart = qcURL + aChartJSON;
 const tChart = qcURL + tChartJSON;
 
+<<<<<<< Updated upstream
 graphContent.appendChild(imgElA);
 imgElA.setAttribute("src", aChart);
 imgElA.setAttribute("alt", "Spotify aritists graph.")
@@ -154,3 +155,24 @@ imgElA.setAttribute("alt", "Spotify aritists graph.")
 graphContent.appendChild(imgElT);
 imgElT.setAttribute("src", tChart);
 imgElT.setAttribute("alt", "Spotify tracks graph.")
+=======
+const graphContent = document.getElementById('graph-content');
+const imgElA = document.createElement("img");
+const imgElT = document.createElement("img");
+const pEL = document.createElement("p");
+
+if (document.getElementById('artist-data').classList.contains('active')) {
+    graphContent.appendChild(imgElA);
+    imgElA.setAttribute("src", aChart);
+    imgElA.setAttribute("alt", "Spotify aritists graph.")
+}
+else if (document.getElementById('track-data').classList.contains('active')) {
+    graphContent.appendChild(imgElT);
+    imgElT.setAttribute("src", tChart);
+    imgElT.setAttribute("alt", "Spotify tracks graph.")
+}
+else {
+    graphContent.appendChild(pEL);
+    pEL.innerHTML = "Select Spotify Artist or Tracks tab.";
+}
+>>>>>>> Stashed changes
