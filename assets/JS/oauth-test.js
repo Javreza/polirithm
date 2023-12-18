@@ -13,6 +13,7 @@ if (!code) {
     const artists = await fetchTopArtists(accessToken);
     const tracks  = await fetchTopTracks(accessToken);
     populateUI(profile, artists, tracks);
+    populateGraph(artists);
     
 }
 
@@ -150,3 +151,82 @@ function populateUI(profile, artists, tracks) {
 
 
 }
+
+function populateGraph(artists) {
+    // Clear existing content
+    const graphContent = document.getElementById('graph-content');
+    graphContent.innerHTML = '';
+
+    // Quickchart API
+    const qcURL = "https://quickchart.io/chart?c=";
+    let artistsName = [];
+    let aPopularity = [];
+    let tracksName = [];
+    let tPopularity = [];
+
+    // current date
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    // const today = mm + '/' + dd + '/' + yyyy;
+    // let currentYear = yyyy;
+
+    // Populate artistsName array
+    for (let i = 0; i < artists.items.length; i++) {
+        artistsName.push(artists.items[i].name);
+    }
+
+    // Populate other arrays (you may replace these with actual Spotify data)
+    for (let i = 0; i < artists.items.length; i++) {
+        aPopularity.push(artists.items[i].popularity);
+    }
+   
+
+    
+    const aChartJSON = {
+        type: 'bar',
+        data: {
+            labels: artistsName,
+            datasets: [{
+                label: `Artists ${today}`,
+                data: aPopularity,
+            }]
+        }
+    };
+
+    const tChartJSON = {
+        type: 'bar',
+        data: {
+            labels: tracksName,
+            datasets: [{
+                label: `Tracks ${today}`,
+                data: tPopularity,
+            }]
+        }
+    };
+
+    // Convert objects to JSON
+    const aChart = qcURL + JSON.stringify(aChartJSON);
+    const tChart = qcURL + JSON.stringify(tChartJSON);
+
+    // Create elements
+    const imgElA = document.createElement("img");
+    const imgElT = document.createElement("img");
+    const pEL = document.createElement("p");
+
+    // // Append elements based on active tab
+    // if (document.getElementById('artist-data').classList.contains('active')) {
+    //     graphContent.appendChild(imgElA);
+    //     imgElA.setAttribute("src", aChart);
+    //     imgElA.setAttribute("alt", "Spotify artists graph.")
+    // } else if (document.getElementById('track-data').classList.contains('active')) {
+    //     graphContent.appendChild(imgElT);
+    //     imgElT.setAttribute("src", tChart);
+    //     imgElT.setAttribute("alt", "Spotify tracks graph.")
+    // } else {
+    //     graphContent.appendChild(pEL);
+    //     pEL.innerHTML = "Select Spotify Artist or Tracks tab.";
+    // }
+};
