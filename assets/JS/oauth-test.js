@@ -1,13 +1,13 @@
 const clientId = "b04a7dd3004d4953af97c0266139356f"; // client ID of app
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
-// const bypassCodeCheck = flase; // added for testing only
+// const bypassCodeCheck = false; // added for testing only
 //&&  !bypassCodeCheck
 
 
 if (!code) {
     redirectToAuthCodeFlow(clientId);
-} else {
+}else {
     const accessToken = await getAccessToken(clientId, code);
     const profile = await fetchProfile(accessToken);
     const artists = await fetchTopArtists(accessToken);
@@ -52,7 +52,7 @@ async function generateCodeChallenge(codeVerifier) {
         .replace(/=+$/, '');
 }
 
-//retrive access token from local storage and send auth request
+//retrieve access token from local storage and send auth request by constructing proper url
 export async function getAccessToken(clientId, code) {    
     const verifier = localStorage.getItem("verifier");
 
@@ -73,6 +73,7 @@ export async function getAccessToken(clientId, code) {
     return access_token;
 }
 
+//api call to get the users profile
 async function fetchProfile(token) {
     const myProfile = await fetch("https://api.spotify.com/v1/me", {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
@@ -81,6 +82,7 @@ async function fetchProfile(token) {
     return await myProfile.json();
 } 
 
+//api call to get the users top artists
 async function fetchTopArtists(token) {
     const topArtists = await fetch('https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10', {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
@@ -88,7 +90,7 @@ async function fetchTopArtists(token) {
 
     return await topArtists.json();
 }
-
+//api call to get the users top tracks
 async function fetchTopTracks(token) {
     const topTracks = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=10', {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
@@ -102,24 +104,49 @@ function populateUI(profile, artists, tracks) {
     document.getElementById("displayName").textContent = profile.display_name;
     
     // document.getElementById("url").setAttribute("href", profile.uri);
-//loop to show top 10 artists
-    for (let i = 1; i < artists.items.length; i++) {
+    //loop to show top 10 artists
+    for (let i = 0; i < artists.items.length; i++) {
         console.log(artists.items[i].name);
+        console.log(artists.items[i].images[0].url);
+
         const artistsList = document.getElementById('top-artists-list');
         const listItem = document.createElement('li');
-        listItem.textContent = i + ". " + artists.items[i].name;
+        const imgLink = document.createElement('a');
+        const artistImg = document.createElement('img');
+        
+        imgLink.target = "_blank";
+        imgLink.href = artists.items[i].external_urls.spotify;
+        artistImg.src = artists.items[i].images[0].url;
+        artistImg.alt = "An image of: " + artists.items[i].name;
+
+        listItem.textContent = i + 1 + ". " + artists.items[i].name;
+
+        imgLink.appendChild(artistImg);
+        listItem.appendChild(imgLink);
         artistsList.appendChild(listItem);
     }
-
-    for (let i = 1; i < tracks.items.length; i++) {
+    //loop to show top 10 tracks
+    for (let i = 0; i < tracks.items.length; i++) {
         console.log(tracks.items[i].name);
+        console.log(tracks.items[i].album.images[0].url);
+
         const tracksList = document.getElementById('top-tracks-list');
         const listItem = document.createElement('li');
-        listItem.textContent = i + ". " + tracks.items[i].name;
+        const imgLink = document.createElement('a');
+        const trackImg = document.createElement('img');
+
+        imgLink.target = "_blank";
+        imgLink.href = tracks.items[i].external_urls.spotify;
+        trackImg.src = tracks.items[i].album.images[0].url;
+        trackImg.alt = "An image of: " + tracks.items[i].name;
+        
+        listItem.textContent = i + 1 + ". " + tracks.items[i].name;
+
+        imgLink.appendChild(trackImg);
+        listItem.appendChild(imgLink);
         tracksList.appendChild(listItem);
+        
     }
-    
+
+
 }
-
-
-

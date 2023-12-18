@@ -14,6 +14,7 @@ body {
 }
 /* ----------------------------------------------------------------- */
 
+
 .modal-background{
     pointer-events: none;
 }
@@ -79,28 +80,32 @@ body {
 .tabs.is-boxed li.is-active {
     background-color: #3C91E6;
     color: white;
+    height:80%;
+}
+
+li.is-active a{
+    background-color: #3C91E6;
+    margin-top: .25em;
+    
     
 }
+
 
 
 div.box{
-    background-color: #3C91E6;
+    background-color: #35383b;
+    box-shadow: none;
+    padding: 0px;
 }
 
-div#shadow-box{
-    background-color: #1ED760;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1400px;
-    
-}
 
-ul.content.list {
-    color: whitesmoke;
-}
+
+
 
 #main-content.box {
+    max-width: 2000px;
     background-color: #35383b;
+    padding: 10px;
 }
 /* ----------------------------------------------------------------- */
 
@@ -116,8 +121,10 @@ ul.content.list {
 #content-cols {
     background-color: #35383b;
     border-radius: 8px;
-    
-    
+}
+
+#data-cols{
+    margin: 10px;
 }
 
 h2.title {
@@ -132,22 +139,73 @@ h2.title {
     background-color:#3C91E6;
 }
 
-li.is-active a{
-    background-color: #3C91E6;
-}
-
 h3.title {
    text-align: left;
-   
+}
+
+.container.is-fluid {
+    max-width: none!important;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
 }
 
 /* ----------------------------------------------------------------- */
 /* content list */
+ul.content.list {
+    color: #1ED760;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.content li+li {
+   margin: 10px;
+    padding: 5px 2.5px ;
+    
+}
+
 .list li {
     background-color: #35383b;
     border-radius: 5px;
-    padding: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    max-width: 30%;
+    
+    color: #1ED760;
+    box-shadow:0px 0px 10px #232527;
 }
+
+
+
+li a{
+    border-radius: 10px;
+
+}
+
+
+li img {
+    height: auto;
+    width: 90%;
+    background-color: #35383b;
+    border-radius: 5px;
+    margin: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+
 
 /* ----------------------------------------------------------------- */
 
@@ -166,29 +224,3 @@ h3.title {
 
 
 
-
-
-/* <!-- <section class="columns section">
-<div class="column"> 
-  <h2 class="header">Spotify Data</h2>
-  <div class="box is-small" id="inner-box">
-    <section class="columns" id="spotify-main content-box">
-      <div class="column">
-        Main Data
-      </div>
-      <div class="column">
-        picture data
-      </div>
-    </section>
-  </div>
-</div>
-<div class="column"> 
-  <h2 class="header">Graph Data</h2>
-  <div class="box is-small" id="inner-box">
-    <section class="columns" id="graph-main content-box">
-      <div class="column">
-        Main Data
-      </div>
-    </section>
-  </div>
-</div> --> */
