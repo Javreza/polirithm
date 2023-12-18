@@ -14,13 +14,17 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
-today = mm + '/' + dd + '/' + yyyy;
-currentYear = yyyy;
+// today = mm + '/' + dd + '/' + yyyy;
+// currentYear = yyyy;
 
-////////// START testing without Spotify data //////////
-artistsName.push("A");
-artistsName.push("B");
-artistsName.push("C");
+////////// START testing without Spotify data /////////
+for (let i = 0; i < artists.items.length; i++) {
+    artistsName = artists.items[i].name
+    artistsName.push();
+}
+// artistsName.push("A");
+// artistsName.push("B");
+// artistsName.push("C");
 
 aPopularity.push("0");
 aPopularity.push("50");

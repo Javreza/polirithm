@@ -46,20 +46,21 @@
         <div class="box is-large container" id="main-content">
           <div class="tabs is-boxed is-medium" id="tabs">
             <ul>
-              <li class="is-active" data-target="artist-data"><a>Artists</a></li>
-              <li data-target="track-data"><a>Tracks</a></li>
+              <li class="is-active" data-target="artist-data" data-graph-id="graph-content-artist"><a>Artists</a></li>
+              <li data-target="track-data" data-graph-id="graph-content-track"><a>Tracks</a></li>
             </ul>
+            
           </div>
           <div class="box is-large container" id="main-content">
             <div class="columns" id="content-cols">
               <div class="column">
                 <h2 class="title is-4">My Top 10 Spotify</h2>
-                <!-- Content card for track data -->
+              
                 <div class="tab-content active" id="artist-data">
                   <div class="box">
                     <h3 class="title is-10">Top Artists</h3>
                     <ul class="content list" id="top-artists-list">
-                      <!-- Add your artist content here -->
+                      <!-- Add artist content here -->
                     </ul>
                   </div>
                 </div>
@@ -68,18 +69,33 @@
                   <div class="box">
                     <h3 class="title is-10">Top Tracks</h3>
                     <ul class="content list" id="top-tracks-list">
-                      <!-- Add your track content here -->
+                      
+                      
                     </ul>
                   </div>
                 </div>
               </div>
+
               <!-- Content for graph data -->
               <div class="column">
                 <h2 class="title is-4">Popularity Across Spotify</h2>
-                <div class="box" id="graph-content">
-                  <!-- graph data goes here -->
+                <div class="tab-content active" id="graph-content-artist">
+                  <div class="box graph">
+                    <!-- graph data goes here -->
+                    
+                  </div>
+                </div>
+              
+                <div class="tab-content" id="graph-content-track">
+                  <div class="box graph">
+                    <!-- graph data goes here -->
+                    
+                  </div>
                 </div>
               </div>
+            </div>
+
+
             </div>
           </div>
         </div>
@@ -93,7 +109,7 @@
             <div class="box">
               About us here.
               <ul class="content list" id="top-artists-list">
-                <!-- Add your artist content here -->
+                <!-- Add  artist content here -->
               </ul>
             </div>
           </div>

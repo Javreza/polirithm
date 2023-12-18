@@ -98,25 +98,25 @@ async function fetchTopTracks(token) {
 
 function populateUI(profile, artists, tracks) {
     document.getElementById("displayName").textContent = profile.display_name;
+    
 
-    // document.getElementById("url").setAttribute("href", profile.uri);
-    //loop to show top 10 artists
-    for (let i = 1; i < artists.items.length; i++) {
+//loop to show top 10 artists
+    for (let i = 0; i < artists.items.length; i++) {
         console.log(artists.items[i].name);
         const artistsList = document.getElementById('top-artists-list');
         const listItem = document.createElement('li');
-        listItem.textContent = i + ". " + artists.items[i].name;
+        listItem.textContent = i + ". " + artists.items[i + 1].name;
         artistsList.appendChild(listItem);
         // data for graph
         artistsName.push(artists.items[i].name);
         aPopularity.push(artists.items[i].Popularity);
     }
 
-    for (let i = 1; i < tracks.items.length; i++) {
+    for (let i = 0; i < tracks.items.length; i++) {
         console.log(tracks.items[i].name);
         const tracksList = document.getElementById('top-tracks-list');
         const listItem = document.createElement('li');
-        listItem.textContent = i + ". " + tracks.items[i].name;
+        listItem.textContent = i + ". " + tracks.items[i + 1].name;
         tracksList.appendChild(listItem);
         // data for graph
         tracksName.push(tracks.items[i].name);
