@@ -37,6 +37,7 @@ header {
 
 .modal-card-body {
     background-color: #1ED760;
+    color: white;
 }
 
 .modal-card-body .box {
