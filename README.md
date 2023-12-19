@@ -22,6 +22,8 @@ User-Story
 
 As a Spotify Listener I want to be able to view stats about my listening habits so that I can gain insight into my listening habits.
 
+![Image of deployed site 1](./assets/images/polirithm-screenshot.png "Site screenshot.")
+
 ## Repo and Deployment 
 
 GitPages deployed link:
