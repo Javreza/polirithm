@@ -35,11 +35,13 @@ header {
 
 .modal-card-body {
     background-color: #1ED760;
+    color: white;
 }
 
 .modal-card-body .box {
     background-color: #35383b;
     text-align: center;
+    color: white;
 }
 
 .modal-card-head,
@@ -90,11 +92,12 @@ li.is-active a {
 div.box {
     background-color: #35383b;
     box-shadow: none;
-    padding: 0px;
+    padding: 5px;
+    color: white;
 }
 
 div#shadow-box {
-    background-color: #1ED760;
+    background-color: #35383b;
 }
 
 
@@ -240,4 +243,7 @@ li img {
 #graph-content-artist img,
 #graph-content-track img {
     margin-top: 35%;
+
 }
+
+
