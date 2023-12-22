@@ -7,14 +7,14 @@ const code = params.get("code");
 
 if (!code) {
     redirectToAuthCodeFlow(clientId);
-}else {
+} else {
     const accessToken = await getAccessToken(clientId, code);
     const profile = await fetchProfile(accessToken);
     const artists = await fetchTopArtists(accessToken);
-    const tracks  = await fetchTopTracks(accessToken);
+    const tracks = await fetchTopTracks(accessToken);
     populateUI(profile, artists, tracks);
     populateGraph(artists, tracks);
-    
+
 }
 
 export async function redirectToAuthCodeFlow(clientId) {
@@ -34,7 +34,7 @@ export async function redirectToAuthCodeFlow(clientId) {
     document.location = `https://accounts.spotify.com/authorize?${params.toString()}`;
 }
 // function to generate code verifier and challenge
-function generateCodeVerifier(length) {             
+function generateCodeVerifier(length) {
     let text = '';
     let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -54,7 +54,7 @@ async function generateCodeChallenge(codeVerifier) {
 }
 
 //retrieve access token from local storage and send auth request by constructing proper url
-export async function getAccessToken(clientId, code) {    
+export async function getAccessToken(clientId, code) {
     const verifier = localStorage.getItem("verifier");
 
     const params = new URLSearchParams();
@@ -81,7 +81,7 @@ async function fetchProfile(token) {
     });
 
     return await myProfile.json();
-} 
+}
 
 //api call to get the users top artists
 async function fetchTopArtists(token) {
@@ -103,7 +103,7 @@ async function fetchTopTracks(token) {
 
 function populateUI(profile, artists, tracks) {
     document.getElementById("displayName").textContent = profile.display_name;
-    
+
     // document.getElementById("url").setAttribute("href", profile.uri);
     //loop to show top 10 artists
     for (let i = 0; i < artists.items.length; i++) {
@@ -114,7 +114,7 @@ function populateUI(profile, artists, tracks) {
         const listItem = document.createElement('li');
         const imgLink = document.createElement('a');
         const artistImg = document.createElement('img');
-        
+
         imgLink.target = "_blank";
         imgLink.href = artists.items[i].external_urls.spotify;
         artistImg.src = artists.items[i].images[0].url;
@@ -140,13 +140,13 @@ function populateUI(profile, artists, tracks) {
         imgLink.href = tracks.items[i].external_urls.spotify;
         trackImg.src = tracks.items[i].album.images[0].url;
         trackImg.alt = "An image of: " + tracks.items[i].name;
-        
+
         listItem.textContent = i + 1 + ". " + tracks.items[i].name;
 
         imgLink.appendChild(trackImg);
         listItem.appendChild(imgLink);
         tracksList.appendChild(listItem);
-        
+
     }
 
 
@@ -205,18 +205,18 @@ function populateGraph(artists, tracks) {
         maintainAspectRatio: false,
         responsive: false,
         scales: {
-          y: {
-            beginAtZero: true
-          }
+            y: {
+                beginAtZero: true
+            }
         },
         plugins: {
-          legend: {
-            labels: {
-              color: 'white' // Set the desired font color
+            legend: {
+                labels: {
+                    color: 'white' // Set the desired font color
+                }
             }
-          }
         }
-      };
+    };
 
 
     const aChartJSON = {
@@ -227,8 +227,8 @@ function populateGraph(artists, tracks) {
                 label: `Artists ${today}`,
                 data: aPopularity,
                 backgroundColor: 'green',
-                color:  "white"
-                
+                color: "white"
+
             }]
         },
         options: commonOptions,
@@ -242,14 +242,14 @@ function populateGraph(artists, tracks) {
                 label: `Tracks ${today}`,
                 data: tPopularity,
                 backgroundColor: 'green',
-                color:  "white"
+                color: "white"
             }]
-        }, 
-        options: commonOptions, 
+        },
+        options: commonOptions,
     };
 
-   
-   
+
+
     // Convert objects to JSON
     const aChart = qcURL + JSON.stringify(aChartJSON);
     const tChart = qcURL + JSON.stringify(tChartJSON);
@@ -260,13 +260,13 @@ function populateGraph(artists, tracks) {
     const pEL = document.createElement("p");
 
     // Append elements based on active tab
-    
+
     graphContentArtist.appendChild(imgElA);
     imgElA.setAttribute("src", aChart);
     imgElA.setAttribute("alt", "Spotify artists graph.")
-    
+
     graphContentTrack.appendChild(imgElT);
     imgElT.setAttribute("src", tChart);
     imgElT.setAttribute("alt", "Spotify tracks graph.")
-    
+
 };

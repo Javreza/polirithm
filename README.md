@@ -63,3 +63,5 @@ Page redirects for user to login to Spotify, then redirects back to Polirithm pa
 
 Please refer to the LICENSE in the repo.
 MIT License
+
+

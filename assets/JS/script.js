@@ -14,8 +14,8 @@ function loadScript() {
   // Load the OAuth script with type="module"
   var script = document.createElement('script');
   script.type = 'module';
-//   script.src = 'assets/JS/oauth-test.js';
-script.src = 'assets/JS/oauth-live.js';
+  //   script.src = 'assets/JS/oauth-test.js';
+  script.src = 'assets/JS/oauth-live.js';
   document.head.appendChild(script);
 }
 
@@ -41,15 +41,12 @@ $(document).ready(function () {
     $("#" + target).addClass("active");
 
     const activeGraphId = $(this).data("graph-id");
-  
+
     // Check which tab has the "is-active" class and add the "active" class to the corresponding graph
     if ($(this).hasClass("is-active")) {
       $("#" + activeGraphId).addClass("active");
     }
   });
-
-  
-
 
 });
 
