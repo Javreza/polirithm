@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Polirithm</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/CSS/reset.css">
+  <link rel="stylesheet" href="assets/CSS/reset.css">
   <!-- Bulma Version 0.9.4-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="./assets/CSS/style.css" />
+  <link rel="stylesheet" href="assets/CSS/style.css" />
 </head>
 
 <body>
@@ -19,23 +19,21 @@
       <!-- Your Logo -->
       <img src="./assets/images/polirithm_logo.png" alt="Polirithm Logo">
     </a>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation" >
       <div class="navbar-brand">
-
-          <div class="navbar-start">
-            <!-- navigation links -->
-            <a class="navbar-item is-underlined" href="#spotify">
-              Top Artists & Tracks
-            </a>
-            <a class="navbar-item is-underlined" href="#history">
-              History
-            </a>
-            <a class="navbar-item is-underlined" href="#about">
-              About Us
-            </a>
-          </div>
-      </div>
-
+     
+     <!-- <div class="navbar-menu"> -->
+        <div class="navbar-start" >
+          <!-- navigation links -->
+          <a class="navbar-item is-underlined" href="#spotify">
+            Top Artists & Tracks
+          </a>
+          <a class="navbar-item is-underlined" href="#about">
+            About Us
+          </a>
+        </div>
+     <!-- </div>-->
+         </div>
     </nav>
   </header>
   <main>
@@ -52,13 +50,13 @@
               <li class="is-active" data-target="artist-data" data-graph-id="graph-content-artist"><a>Artists</a></li>
               <li data-target="track-data" data-graph-id="graph-content-track"><a>Tracks</a></li>
             </ul>
-
+            
           </div>
           <div class="box is-large container" id="main-content">
             <div class="columns" id="content-cols">
               <div class="column">
                 <h2 class="title is-4">My Top 10 Spotify</h2>
-
+              
                 <div class="tab-content active" id="artist-data">
                   <div class="box">
                     <h3 class="title is-10">Top Artists</h3>
@@ -72,8 +70,8 @@
                   <div class="box">
                     <h3 class="title is-10">Top Tracks</h3>
                     <ul class="content list" id="top-tracks-list">
-
-
+                      
+                      
                     </ul>
                   </div>
                 </div>
@@ -85,48 +83,30 @@
                 <div class="tab-content active" id="graph-content-artist">
                   <div class="box graph">
                     <!-- graph data goes here -->
-
+                    
                   </div>
                 </div>
-
+              
                 <div class="tab-content" id="graph-content-track">
                   <div class="box graph">
                     <!-- graph data goes here -->
-
+                    
                   </div>
                 </div>
               </div>
             </div>
 
 
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section is-small">
-      <div class="box" id="shadow-box">
-        <div class="box is-large container" id="history">
-          <h2 class="title is-4">History</h2>
-          <!-- Content card for track data -->
-          <div>
-            <div class="box">
-              <h3 class="title is-10">Top Spotify History</h3>
-              <p id="top-history-stored">
-                <!-- History here: Artist, Track, data -->
-              </p>
             </div>
           </div>
         </div>
-      </div>
     </section>
-
     <section class="section is-small">
       <div class="box" id="shadow-box">
         <div class="box is-large container" id="about">
-          <h2 class="title is-4">About Us</h2>
-          <!-- Content card for track data -->
-          <div class="tab-content active" id="artist-data">
+          <h2 class="title is-4" >About Us</h2>
+           <!-- Content card for track data -->
+           <div class="tab-content active" id="artist-data">
             <div class="box">
               <h3 class="title is-10">The Polirithms</h3>
               <h4>Polyrhythm:</h4>
@@ -141,13 +121,6 @@
                 <li>Melissa Brown</li>
                 </li>Javier Reza</li>
                 </li>Jeff Scott</li>
-
-              </ul>
-
-
-              <ul class="content list" id="top-artists-list">
-                <!-- Add  artist content here -->
-
               </ul>
             </div>
           </div>
@@ -158,7 +131,7 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <img class="modal-card-title" src="./assets/images/polirithm_logo.png" alt="logo version of Polirithm">
+          <img class="modal-card-title" src="assets/images/polirithm_logo.png" alt="logo version of Polirithm">
         </header>
         <section class="modal-card-body">
           <div class="box">
@@ -184,18 +157,14 @@
   <!-- Added link to the jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- SPOTIFY API LOGIN SCREEN -->
-  <!-- <script src="./assets/JS/script.js"></script> -->
+  <script src="./assets/JS/script.js"></script>
   <!-- Spotify JS NOT NEEDED HERE, is now in script.JS >> 
     <script type="module" src="./assets/JS/oauth-live.js"></script> -->
 
   <!-- TEST -->
-  <script src="./assets/JS/chartTEST.js"></script> 
+  <!-- <script src="./assets/JS/chartTEST.js"></script> -->
 
 </body>
 
-
 </html>
-
-
 "https://javreza.github.io/polirithm/"
-
